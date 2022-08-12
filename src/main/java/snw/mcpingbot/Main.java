@@ -31,18 +31,12 @@ import java.io.IOException;
 public class Main extends BasePlugin {
     private static Main INSTANCE;
 
-    protected Main(File configFile, File dataFolder, PluginDescription description, File file, org.slf4j.Logger logger) {
-        super(configFile, dataFolder, description, file, logger);
-    }
-
     public static Main getInstance() {
         return INSTANCE;
     }
 
     @Override
     public void onEnable() {
-        //noinspection ResultOfMethodCallIgnored
-        getDataFolder().mkdir();
         INSTANCE = this;
         File cacheDir = new File(getDataFolder(), "cache");
         if (!cacheDir.exists()) {
@@ -142,7 +136,7 @@ public class Main extends BasePlugin {
         if (message instanceof TextChannelMessage) {
             ((TextChannelMessage) message).getChannel().sendComponent(
                     new MarkdownComponent(content),
-                    message,
+                    (TextChannelMessage) message,
                     sender
             );
         } else {
@@ -154,7 +148,7 @@ public class Main extends BasePlugin {
         if (message instanceof TextChannelMessage) {
             ((TextChannelMessage) message).getChannel().sendComponent(
                     component,
-                    message,
+                    (TextChannelMessage) message,
                     sender
             );
         } else {
