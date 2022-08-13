@@ -59,9 +59,10 @@ public class Main extends BasePlugin {
                                 } else {
                                     host = address.substring(0, address.indexOf(":") - 1);
                                     try {
-                                        port = Integer.parseInt(address.substring(address.indexOf(":")));
+                                        port = Integer.parseInt(address.substring(address.indexOf(":") + 1));
                                     } catch (NumberFormatException e) {
                                         reply(sender, message, "无效的端口号。");
+                                        return;
                                     }
                                 }
                                 // endregion
@@ -95,6 +96,7 @@ public class Main extends BasePlugin {
                                                         new ImageElement(
                                                                 JKook.getHttpAPI().uploadFile(file),
                                                                 null,
+                                                                Size.SM,
                                                                 false
                                                         ),
                                                         Accessory.Mode.RIGHT
