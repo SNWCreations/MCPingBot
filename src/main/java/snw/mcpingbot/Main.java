@@ -57,7 +57,7 @@ public class Main extends BasePlugin {
                                 if (!address.contains(":")) {
                                     host = address;
                                 } else {
-                                    host = address.substring(0, address.indexOf(":") - 1);
+                                    host = address.substring(0, address.indexOf(":"));
                                     try {
                                         port = Integer.parseInt(address.substring(address.indexOf(":") + 1));
                                     } catch (NumberFormatException e) {
@@ -71,6 +71,7 @@ public class Main extends BasePlugin {
                                 try {
                                     response = MCPing.getPing(MCPingOptions.builder().hostname(host).port(port).build());
                                 } catch (IOException e) {
+                                    getLogger().error("Unable to PING requested host {}", address, e);
                                     reply(sender, message, "尝试 PING 服务器时发生异常，这个服务器可能不在线？或者连接超时？");
                                     return;
                                 }
