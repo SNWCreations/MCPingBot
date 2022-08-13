@@ -71,7 +71,7 @@ public class Main extends BasePlugin {
                                 try {
                                     response = MCPing.getPing(MCPingOptions.builder().hostname(host).port(port).build());
                                 } catch (IOException e) {
-                                    reply(sender, message, "尝试 PING 服务器时发生异常，这个服务器可能不在线？");
+                                    reply(sender, message, "尝试 PING 服务器时发生异常，这个服务器可能不在线？或者连接超时？");
                                     return;
                                 }
                                 // endregion
