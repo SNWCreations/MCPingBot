@@ -94,13 +94,13 @@ public class Main extends BasePlugin {
                                         .addModule(
                                                 new SectionModule(
                                                         new MarkdownElement(motd),
-                                                        new ImageElement(
+                                                        file != null ? new ImageElement(
                                                                 JKook.getHttpAPI().uploadFile(file),
                                                                 null,
                                                                 Size.SM,
                                                                 false
-                                                        ),
-                                                        Accessory.Mode.RIGHT
+                                                        ) : null,
+                                                        file != null ? Accessory.Mode.RIGHT : null
                                                 )
                                         )
                                         .addModule(
@@ -115,8 +115,10 @@ public class Main extends BasePlugin {
                                         )
                                         .build();
                                 reply(sender, message, card);
-                                //noinspection ResultOfMethodCallIgnored
-                                file.delete();
+                                if (file != null) {
+                                    //noinspection ResultOfMethodCallIgnored
+                                    file.delete();
+                                }
                             }
                         }
                 )
