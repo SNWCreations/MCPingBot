@@ -47,6 +47,7 @@ public class Main extends BasePlugin {
         new JKookCommand("mcping")
                 .executesUser(
                         (sender, arguments, message) -> {
+                            message.delete();
                             if (arguments.length == 0) {
                                 reply(sender, message, "您没有提供参数！");
                             } else {
