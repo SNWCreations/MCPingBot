@@ -144,7 +144,7 @@ public class Main extends BasePlugin {
         if (message instanceof TextChannelMessage) {
             ((TextChannelMessage) message).getChannel().sendComponent(
                     new MarkdownComponent(content),
-                    (TextChannelMessage) message,
+                    null, //(TextChannelMessage) message,
                     sender
             );
         } else {
@@ -156,7 +156,7 @@ public class Main extends BasePlugin {
         if (message instanceof TextChannelMessage) {
             ((TextChannelMessage) message).getChannel().sendComponent(
                     component,
-                    (TextChannelMessage) message,
+                    null, //(TextChannelMessage) message,
                     sender
             );
         } else {
