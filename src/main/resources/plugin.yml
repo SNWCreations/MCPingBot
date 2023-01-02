@@ -1,5 +1,5 @@
 name: MCPingBot
-version: 0.1.0
+version: 1.0.6
 api-version: 0.33.0
 authors: ["SNWCreations"]
 main: snw.mcpingbot.Main
