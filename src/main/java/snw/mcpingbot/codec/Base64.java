@@ -15,9 +15,9 @@ public class Base64 {
         if (value == null) {
             return null;
         }
-        String tempBase64String = base64String.replace(value.getValue(), "");
+        String tempBase64String = base64String.replace(value.getValue(), "").replace("\r\n", "");
 
-        byte[] bytes = java.util.Base64.getDecoder().decode(tempBase64String);
+        byte[] bytes = java.util.Base64.getMimeDecoder().decode(tempBase64String);
         File file;
         do {
             file = new File(Main.getInstance().getDataFolder(), randomString() + ".png");
