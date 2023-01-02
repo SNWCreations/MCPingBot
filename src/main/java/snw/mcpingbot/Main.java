@@ -22,7 +22,6 @@ import snw.jkook.message.component.card.module.ContextModule;
 import snw.jkook.message.component.card.module.HeaderModule;
 import snw.jkook.message.component.card.module.SectionModule;
 import snw.jkook.plugin.BasePlugin;
-import snw.jkook.plugin.PluginDescription;
 import snw.mcpingbot.codec.Base64;
 
 import java.io.File;
