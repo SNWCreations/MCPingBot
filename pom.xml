@@ -96,11 +96,10 @@
             <version>1.7.36</version>
             <scope>provided</scope>
         </dependency>
-        <!-- Self-built artifact as the PING library, see https://github.com/lucaazalim/minecraft-server-ping -->
         <dependency>
-            <groupId>br.com.azalim</groupId>
-            <artifactId>mcserverping</artifactId>
-            <version>1.0.6</version>
+            <groupId>com.github.lucaazalim</groupId>
+            <artifactId>minecraft-server-ping</artifactId>
+            <version>master-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
